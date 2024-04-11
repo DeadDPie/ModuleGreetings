@@ -15,7 +15,7 @@ class mod_greeting_mod_form extends moodleform_mod
     {
         $mform = $this->_form;
         $mform->addElement('header', 'general', get_string('general', 'form'));
-        $mform->addElement('text', 'name', get_string('name'), array('size'=>'48'));
+        $mform->addElement('text', 'name', get_string('name'), ['size'=>'48']);
         $mform->setType('name', PARAM_TEXT);
         $mform->addRule('name', null, 'required', null, 'client');
 

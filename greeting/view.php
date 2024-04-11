@@ -17,8 +17,8 @@ $id = optional_param('id', 0, PARAM_INT);        // Course module ID
 
 $cm = get_coursemodule_from_id('greeting', $id, 0, false, MUST_EXIST);
 
-$greeting = $DB->get_record('greeting', array('id'=>$cm->instance), '*', MUST_EXIST);
-$course = $DB->get_record('course', array('id'=>$cm->course), '*', MUST_EXIST);
+$greeting = $DB->get_record('greeting', ['id'=>$cm->instance], '*', MUST_EXIST);
+$course = $DB->get_record('course', ['id'=>$cm->course], '*', MUST_EXIST);
 
 require_course_login($course, true, $cm);
 $context = context_module::instance($cm->id);
@@ -28,7 +28,7 @@ $PAGE->set_url('/mod/greeting/view.php', ['id' => $cm->id]);
 $PAGE->set_title($course->shortname.': ' .$greeting->name);
 $PAGE->set_heading($course->fullname);
 
-$page = $DB->get_record('page', array('id'=>$id));
+$page = $DB->get_record('page', ['id'=>$id]);
 
 echo $OUTPUT->header();
 if (!isset($options['printheading']) || !empty($options['printheading'])) {
