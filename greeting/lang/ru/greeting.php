@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 $string['modulename'] = 'Приветствие';
 $string['pluginname'] = 'Приветствие';
 $string['modulenameplural'] = 'Приветствия';
